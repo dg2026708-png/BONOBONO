@@ -4,6 +4,17 @@ b = box(make_trail = True, texture='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAA
 pyramid(pos=vec(-1, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
 pyramid(pos=vec(0, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
 pyramid(pos=vec(1, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
+pyramid(pos=vec(1.1, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
+pyramid(pos=vec(1.2, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
+pyramid(pos=vec(0.1, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
+pyramid(pos=vec(0.2, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
+pyramid(pos=vec(-1.1, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
+pyramid(pos=vec(-1.2, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
+pyramid(pos=vec(-1, -0.5, -1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,0.1,0.1))
+
+pp = []
+for i in range(-10,10) : 
+    pp.append(pyramid(pos=vec(i/10, -0.5, 1), axis=vec(0, 1, 0), color=color.green, size = vec(0.1,random.random(),0.1)))
 
 
 while True : 
@@ -13,11 +24,10 @@ while True :
         b.color = vec(random.random(),random.random(),random.random())
         b.pos.x = random.uniform(-10,10)
         b.pos.y = random.uniform(-10,10)
-        b.trail_color = b.color
-        
-        from vpython import *
-        scene = canvas(title="배경 바꾸기 연습", width=800, height=600, background=color.white)
-    scene.background = color.white
+        b.trail_color = b.color    
+    for p in pp : 
+        rate(10)
+        p.color = vec(random.random(),random.random(),random.random())
 
 
 
